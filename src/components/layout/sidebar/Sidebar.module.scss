@@ -1,0 +1,21 @@
+.sider-wrapper {
+  background-color: var(--bgBase) !important;
+  min-width: var(--sidebarWidth) !important;
+  height: 100vh;
+  overflow: auto !important;
+  position: fixed !important;
+  left: 0 !important;
+  .sider-menu {
+    background-color: var(--bgBase) !important;
+  }
+
+  .logo {
+    margin: 20px 0 31px 29px;
+    img {
+      width: 164px;
+      height: 49px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+  }
+}

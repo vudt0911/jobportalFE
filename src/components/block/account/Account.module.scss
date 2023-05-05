@@ -1,0 +1,21 @@
+.account {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  > .avatar {
+    background: #535353;
+    padding: 6px;
+    border-radius: 50%;
+  }
+  > .name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fafafa;
+    margin: 0 6px;
+  }
+
+  .icon {
+    color: #ffffff;
+  }
+}

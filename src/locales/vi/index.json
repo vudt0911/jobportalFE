@@ -1,0 +1,18 @@
+{
+  "example": {
+    "1": "Ngôn ngữ"
+  },
+  "authentication": {
+    "1": "Mật khẩu không đúng định dạng"
+  },
+  "header": {
+    "upgrade": "Nâng cấp",
+    "account": "Tài khoản",
+    "profile": "Hồ sơ",
+    "upgradeToPremium": "Nâng cấp lên Premium",
+    "setting": "Cài đặt",
+    "logout": "Đăng xuất",
+    "continue": "Tiếp tục",
+    "back": "Quay lại"
+  }
+}

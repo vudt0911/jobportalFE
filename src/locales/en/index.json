@@ -1,0 +1,18 @@
+{
+  "example": {
+    "1": "Language"
+  },
+  "authentication": {
+    "1": "Password is not in the correct format"
+  },
+  "header": {
+    "upgrade": "Upgrade",
+    "account": "Account",
+    "profile": "Profile",
+    "upgradeToPremium": "Upgrade to Premium",
+    "setting": "Setting",
+    "logout": "Logout",
+    "continue": "Continue",
+    "back": "back"
+  }
+}

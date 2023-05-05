@@ -1,0 +1,41 @@
+body .toast-wrapper {
+  padding: 10px;
+  font-size: 14px;
+  width: 300px;
+  border-radius: 4px;
+  background-color: #fff;
+
+  &>div>div>:nth-child(1) {
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateY(-8px);
+  }
+
+  &>div>div>:nth-child(2) {
+    font-size: 15px !important;
+    margin-bottom: 0 !important;
+  }
+
+  &>div>div>:nth-child(3) {
+    font-size: 13px;
+  }
+
+  &>a {
+    top: 9px !important;
+    right: 15px;
+    font-size: 16px;
+    padding: 4px;
+
+    &>span>span {
+      font-size: 18px !important;
+      color: #333
+
+    }
+
+  }
+
+
+
+}

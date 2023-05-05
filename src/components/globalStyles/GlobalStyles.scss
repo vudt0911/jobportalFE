@@ -1,0 +1,58 @@
+@import "normalize.css";
+:root {
+  --bgButton: #5aac44;
+  --black: #000;
+  --text-color: #161823;
+  --white: #fff;
+  --bgMain: rgb(249, 250, 252);
+  --linkColor: #0000ff;
+  --boxShaDowMain: rgb(0 0 0 / 10%) 0 0 10px;
+  --bgBase: #121212;
+  --bgHighlight: #1a1a1a;
+  --sidebarWidth: 300px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "ProximaNova", sans-serif;
+  font-size: 25px !important;
+  line-height: 1.5rem;
+  background-color: var(--bgMain);
+  color: var(--text-color);
+}
+
+p,
+a,
+span,
+div,
+input,
+select,
+textarea {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  color: var(--linkColor);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

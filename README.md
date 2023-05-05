@@ -1,0 +1,2 @@
+--run project: npm run dev
+--run storybook: npm run storybook
