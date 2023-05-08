@@ -1,6 +1,7 @@
 import LoginPage from "@/pages/auth/login";
 import RegisterPage from "@/pages/auth/register";
 import PageExample from "@/pages/sample";
+import PageProfile from "@/pages/profile";
 import { IRoutes } from "@/routers/route.type";
 
 const publicRoutes: IRoutes[] = [
@@ -16,6 +17,10 @@ const publicRoutes: IRoutes[] = [
   {
     path: "/register",
     component: RegisterPage,
+  },
+  {
+    path: "/profile",
+    component: PageProfile,
   },
 ];
 

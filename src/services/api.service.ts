@@ -1,10 +1,12 @@
 import { API_URL } from "@/const";
 import axios from "axios";
-// import {
-//   getLocalAccessToken,
-//   getLocalRefreshToken,
-//   updateLocalAccessToken,
-// } from "./token.service";
+import { useNavigate } from "react-router-dom";
+import {
+  getLocalAccessToken,
+  getLocalRefreshToken,
+  updateLocalAccessToken,
+} from "./token.service";
+import { showToast } from "@/components/block/toast";
 interface Option {
   url: string;
   /**
@@ -21,40 +23,43 @@ const instance = axios.create({
   },
 });
 
-// instance.interceptors.request.use(
-//   (config) => {
-//     // const token = getLocalAccessToken();
-//     if (token) {
-//       // config.headers["Authorization"] = 'Bearer ' + token;  // for Spring Boot back-end
-//       config.headers["x-access-token"] = token; // for Node.js Express back-end
-//     }
-//     return config;
-//   },
-//   (error) => {
-//     return Promise.reject(error);
-//   }
-// );
+instance.interceptors.request.use(
+  (config) => {
+    const token = getLocalAccessToken();
+    if (token) {
+       config.headers["Authorization"] = 'Bearer ' + token;  // for Spring Boot back-end
+      // config.headers["x-access-token"] = token; // for Node.js Express back-end
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 instance.interceptors.response.use(
   (res) => res.data,
   async (err) => {
     /* Checking if the error is 401 and if the url is not login. If it is not login, it will try to
    refresh the token. */
     const originalConfig = err.config;
+    const navigate = useNavigate();
     if (originalConfig.url !== "api/user/login" && err.response) {
       // Access Token was expired
-      // if (err.response.status === 401 && !originalConfig._retry) {
-      //   originalConfig._retry = true;
-      //   try {
-      //     const rs = await instance.post("/api/user/refreshToken", {
-      //       refreshToken: getLocalRefreshToken(),
-      //     });
-      //     const { accessToken } = rs.data;
-      //     updateLocalAccessToken(accessToken);
-      //     return instance(originalConfig);
-      //   } catch (_error) {
-      //     return Promise.reject(_error);
-      //   }
-      // }
+      if (err.response.status === 401 && !originalConfig._retry) {
+        originalConfig._retry = true;
+        // try {
+        //   const rs = await instance.post("/api/user/refreshToken", {
+        //     refreshToken: getLocalRefreshToken(),
+        //   });
+        //   const { accessToken } = rs.data;
+        //   updateLocalAccessToken(accessToken);
+        //   return instance(originalConfig);
+        // } catch (_error) {
+        //   return Promise.reject(_error);
+        // }
+        navigate("/login");
+      }
+
     }
     // showToast({
     //   title:
@@ -63,7 +68,7 @@ instance.interceptors.response.use(
     //     "ERROR_NETWORK_CONNECTION",
     //   type: "error",
     // });
-    return Promise.reject(err);
+     return Promise.reject(err);
   }
 );
 export const request = (option: Option): Promise<any> => {

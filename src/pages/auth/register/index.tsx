@@ -9,7 +9,7 @@ import { Checkbox, Col, DatePicker, DatePickerProps, Form, Space } from "antd";
 import { FormInput } from "@/components/from/input";
 import { FormSelect, ItemSelect } from "@/components/from/select";
 import { handleErrorConfig } from "@/utils/handleError";
-import { IFormRegister, initialValues, validateSchema } from "./registerConfig";
+import { IFormRegister, initialValues, validateSchema } from "@/pages/auth/register/RegisterConfig";
 import { Link, useNavigate } from "react-router-dom";
 import { RegisterApi } from "@/api/authen/register";
 import { showToast } from "@/components/block/toast";

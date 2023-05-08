@@ -3,7 +3,7 @@ import { getUserAccessToken } from "@/services/token.service";
 import { Navigate, Outlet } from "react-router-dom";
 
 function ProtectedRoute() {
-  const accessToken = getUserAccessToken()?.accessToken;
+  const accessToken = getUserAccessToken()?.token;
   return accessToken ? <Outlet /> : <Navigate to="/login" />;
 }
 

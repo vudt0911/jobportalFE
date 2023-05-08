@@ -28,11 +28,11 @@ export default function LoginPage() {
       showToast({
         title: "Login Successfully",
       });
-      navigate("/home");
+      navigate("/example");
       setIsLoading(false);
       setUserAccessToken(res);
       setAuth(res);
-      // window.location.reload();
+      window.location.reload();
     } catch (error: unknown | AxiosError) {
       handleErrorConfig(error);
       setIsLoading(false);
